@@ -1,28 +1,28 @@
 <?php
+if (!headers_sent()) {
+    /**
+     * Configuration for DEVELOPMENT environment
+     * To create another configuration set just copy this file to config.production.php etc. You get the idea :)
+     */
 
-/**
- * Configuration for DEVELOPMENT environment
- * To create another configuration set just copy this file to config.production.php etc. You get the idea :)
- */
+    /**
+     * Configuration for: Error reporting
+     * Useful to show every little problem during development, but only show hard / no errors in production.
+     * It's a little bit dirty to put this here, but who cares. For development purposes it's totally okay.
+     */
+    error_reporting(E_ALL);
+    ini_set("display_errors", 1);
 
-/**
- * Configuration for: Error reporting
- * Useful to show every little problem during development, but only show hard / no errors in production.
- * It's a little bit dirty to put this here, but who cares. For development purposes it's totally okay.
- */
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
-
-/**
- * Configuration for cookie security
- * Quote from PHP manual: Marks the cookie as accessible only through the HTTP protocol. This means that the cookie
- * won't be accessible by scripting languages, such as JavaScript. This setting can effectively help to reduce identity
- * theft through XSS attacks (although it is not supported by all browsers).
- *
- * @see php.net/manual/en/session.configuration.php#ini.session.cookie-httponly
- */
-ini_set('session.cookie_httponly', 1);
-
+    /**
+     * Configuration for cookie security
+     * Quote from PHP manual: Marks the cookie as accessible only through the HTTP protocol. This means that the cookie
+     * won't be accessible by scripting languages, such as JavaScript. This setting can effectively help to reduce identity
+     * theft through XSS attacks (although it is not supported by all browsers).
+     *
+     * @see php.net/manual/en/session.configuration.php#ini.session.cookie-httponly
+     */
+    ini_set('session.cookie_httponly', 1);
+}
 /**
  * Returns the full configuration.
  * This is used by the core/Config class.
