@@ -86,8 +86,6 @@ class FilterTest extends PHPUnit_Framework_TestCase
     {
         $codeBefore = "Hello <script>var http = new XMLHttpRequest(); http.open('POST', 'example.com/my_account/delete.php', true);</script>";
         $codeAfter = 'Hello &lt;script&gt;var http = new XMLHttpRequest(); http.open(&#039;POST&#039;, &#039;example.com/my_account/delete.php&#039;, true);&lt;/script&gt;';
-        $integerBefore = 123;
-        $integerAfter  = 123;
 
         $object = new stdClass();
         $object->str = 'foo';
@@ -159,51 +157,22 @@ class FilterTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($codeAfter, Filter::XSSFilter($object)->badObject->badStr);
     }
 
-
     /**
-     * For every type other than strings or arrays, the method should return the untouched passed argument
-     */
-    public function testXSSFilterWithNonStringOrArrayArguments()
-    {
-        $integerBefore = 123;
-        $integerAfter  = 123;
-        $arrayBefore   = [1, 2, 3];
-        $arrayAfter    = [1, 2, 3];
-        $floatsBefore  = 17.001;
-        $floatsAfter   = 17.001;
-        $null = null;
-
-        Filter::XSSFilter($integerBefore);         
-        Filter::XSSFilter($arrayBefore);         
-        Filter::XSSFilter($floatsBefore);         
-        Filter::XSSFilter($null);         
-
-        $this->assertEquals($integerAfter, $integerBefore);
-        $this->assertEquals($arrayBefore, $arrayAfter);
-        $this->assertEquals($floatsBefore, $floatsAfter);
-        $this->assertNull($null);
-    }   
-
-     /**
      * For every type other than strings or arrays, the method should return the untouched passed argument
      */
     public function testXSSFilterWithNonStringOrArrayArguments_return()
     {
         $integerBefore = 123;
-        $integerAfter  = 123;
         $arrayBefore   = [1, 2, 3];
-        $arrayAfter    = [1, 2, 3];
         $floatsBefore  = 17.001;
-        $floatsAfter   = 17.001;
-        $null = null;
 
         $this->assertEquals($integerAfter,  Filter::XSSFilter($integerBefore));
         $this->assertEquals($arrayBefore,  Filter::XSSFilter($arrayBefore));
         $this->assertEquals($floatsBefore, Filter::XSSFilter($floatsBefore));
-        $this->assertNull(Filter::XSSFilter($null));
+        $this->assertNull(Filter::XSSFilter(null));
     }   
 
-     /**
+    /**
      * For every type other than strings or arrays, the method should return the untouched passed argument
      */
     public function testXSSFilterWithNonStringOrArrayArguments_byref()
