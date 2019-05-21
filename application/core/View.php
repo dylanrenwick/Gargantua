@@ -31,29 +31,29 @@ class View
      * the following: $this->view->renderMulti(array('help/index', 'help/banner'));
      * @param array $filenames Array of the paths of the to-be-rendered view, usually folder/file(.php) for each
      * @param array $data Data to be used in the view
-     * @return bool
      */
     public function renderFiles($filenames, $data = null, $template = true)
     {
-        if (!is_array($filenames)) {
-            self::render($filenames, $data);
-            return false;
-        }
-
         if ($data) {
             foreach ($data as $key => $value) {
                 $this->{$key} = $value;
             }
         }
 
-        require Config::get('PATH_VIEW') . '_templates/header.php';
+        if ($template) {
+            foreach (Config::get('TEMPLATE_BEFORE') as $template_page) {
+                require Config::get('PATH_VIEW') . Config::get('PATH_TEMPLATE') . $template_page;
+            }
+        }
 
         foreach($filenames as $filename) {
             require Config::get('PATH_VIEW') . $filename . '.php';
         }
 
-        require Config::get('PATH_VIEW') . '_templates/footer.php';
-    }
+        if ($template) {
+            foreach (Config::get('TEMPLATE_AFTER') as $template_page) {
+                require Config::get('PATH_VIEW') . Config::get('PATH_TEMPLATE') . $template_page;
+            }
 
     /**
      * Same like render(), but does not include header and footer
