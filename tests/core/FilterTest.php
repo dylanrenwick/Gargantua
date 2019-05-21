@@ -165,11 +165,12 @@ class FilterTest extends PHPUnit_Framework_TestCase
         $integerBefore = 123;
         $arrayBefore   = [1, 2, 3];
         $floatsBefore  = 17.001;
+        $null = null;
 
         $this->assertEquals($integerBefore,  Filter::XSSFilter($integerBefore));
         $this->assertEquals($arrayBefore,  Filter::XSSFilter($arrayBefore));
         $this->assertEquals($floatsBefore, Filter::XSSFilter($floatsBefore));
-        $this->assertNull(Filter::XSSFilter(null));
+        $this->assertNull(Filter::XSSFilter($null));
     }   
 
     /**
