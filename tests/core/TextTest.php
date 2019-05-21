@@ -10,6 +10,12 @@ class TextTest extends PHPUnit_Framework_TestCase
 		$this->assertEquals("The username or password is incorrect. Please try again.", Text::get('FEEDBACK_USERNAME_OR_PASSWORD_WRONG'));
 	}
 
+	public function testGetWithData()
+	{
+		$expected = "Test hello";
+		$this->assertEquals($expected, Text::get('DATA_TEST_STRING', array('dataVal' => 'hello')));
+	}
+
 	/**
 	 * When argument is null, should return null
 	 */

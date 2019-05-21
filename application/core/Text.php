@@ -11,12 +11,6 @@ class Text
             return null;
         }
 
-        if ($data) {
-            foreach ($data as $var => $value) {
-                ${$var} = $value;
-            }
-        }
-
         // load config file (this is only done once per application lifecycle)
         if (!self::$texts) {
             self::$texts = require('../application/config/texts.php');
@@ -27,6 +21,18 @@ class Text
             return null;
         }
 
-        return self::$texts[$key];
+        $text = self::$texts[$key];
+
+        $matches = array();
+        while (preg_match('/{\$([a-zA-Z_]+)}/', $text, $matches)) {
+            for ($i = 1; $i < count($matches); $i++) {
+                $val = 'null';
+                if (isset($data[$matches[$i]])) $val = $data[$matches[$i]];
+                echo $matches[$i]."\n";
+                $text = preg_replace('/{\$'.$matches[$i].'}/', $val, $text);
+            }
+        }
+
+        return $text;
     }
 }
