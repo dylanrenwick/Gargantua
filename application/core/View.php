@@ -54,21 +54,7 @@ class View
             foreach (Config::get('TEMPLATE_AFTER') as $template_page) {
                 require Config::get('PATH_VIEW') . Config::get('PATH_TEMPLATE') . $template_page;
             }
-
-    /**
-     * Same like render(), but does not include header and footer
-     * @param string $filename Path of the to-be-rendered view, usually folder/file(.php)
-     * @param mixed $data Data to be used in the view
-     */
-    public function renderWithoutHeaderAndFooter($filename, $data = null)
-    {
-        if ($data) {
-            foreach ($data as $key => $value) {
-                $this->{$key} = $value;
-            }
         }
-
-        require Config::get('PATH_VIEW') . $filename . '.php';
     }
 
     /**
