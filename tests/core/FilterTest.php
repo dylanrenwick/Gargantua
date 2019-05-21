@@ -166,7 +166,7 @@ class FilterTest extends PHPUnit_Framework_TestCase
         $arrayBefore   = [1, 2, 3];
         $floatsBefore  = 17.001;
 
-        $this->assertEquals($integerAfter,  Filter::XSSFilter($integerBefore));
+        $this->assertEquals($integerBefore,  Filter::XSSFilter($integerBefore));
         $this->assertEquals($arrayBefore,  Filter::XSSFilter($arrayBefore));
         $this->assertEquals($floatsBefore, Filter::XSSFilter($floatsBefore));
         $this->assertNull(Filter::XSSFilter(null));
