@@ -33,7 +33,7 @@ class View
      * @param array $data Data to be used in the view
      * @return bool
      */
-    public function renderMulti($filenames, $data = null)
+    public function renderFiles($filenames, $data = null, $template = true)
     {
         if (!is_array($filenames)) {
             self::render($filenames, $data);
