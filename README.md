@@ -1,8 +1,8 @@
 # Gargantua
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/dylanrenwick/gargantua/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/dylanrenwick/gargantua/?branch=master)
-[![Code Climate](https://codeclimate.com/github/dylanrenwick/gargantua/badges/gpa.svg)](https://codeclimate.com/github/dylanrenwick/gargantua)
-[![Travis CI](https://travis-ci.org/dylanrenwick/gargantua.svg?branch=master)](https://travis-ci.org/dylanrenwick/gargantua)
+[![Code Climate](https://api.codeclimate.com/v1/badges/319025df22c1e7af05dd/maintainability)](https://codeclimate.com/github/dylanrenwick/Gargantua/maintainability)
+[![Travis CI](https://travis-ci.org/dylanrenwick/Gargantua.svg?branch=master)](https://travis-ci.org/dylanrenwick/Gargantua)
 
 Gargantua is a fork of the php-login project "HUGE".
 
