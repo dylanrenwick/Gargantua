@@ -11,6 +11,7 @@
          syntaxCheck="false">
     <testsuites>
         <testsuite name="Core Suite">
+            <file>./first.php</file>
             <directory>./core/</directory>
         </testsuite>
     </testsuites>
