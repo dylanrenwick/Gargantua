@@ -1,11 +1,8 @@
 # Gargantua
 
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/panique/huge/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/panique/huge/?branch=master)
-[![Code Climate](https://codeclimate.com/github/panique/huge/badges/gpa.svg)](https://codeclimate.com/github/panique/huge)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/01a221d168b04b1c94a85813519dab40)](https://www.codacy.com/app/panique/huge?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=panique/huge&amp;utm_campaign=Badge_Grade)
-[![Travis CI](https://travis-ci.org/panique/huge.svg?branch=master)](https://travis-ci.org/panique/huge)
-[![Dependency Status](https://www.versioneye.com/user/projects/54ca11fbde7924f81a000010/badge.svg?style=flat)](https://www.versioneye.com/user/projects/54ca11fbde7924f81a000010)
-[![Support](https://supporterhq.com/api/b/9guz00i6rep05k1mwxyquz30k)](https://supporterhq.com/give/9guz00i6rep05k1mwxyquz30k)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/dylanrenwick/gargantua/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/dylanrenwick/gargantua/?branch=master)
+[![Code Climate](https://codeclimate.com/github/dylanrenwick/gargantua/badges/gpa.svg)](https://codeclimate.com/github/dylanrenwick/gargantua)
+[![Travis CI](https://travis-ci.org/dylanrenwick/gargantua.svg?branch=master)](https://travis-ci.org/dylanrenwick/gargantua)
 
 Gargantua is a fork of the php-login project "HUGE".
 
