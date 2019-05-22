@@ -12,7 +12,7 @@ class Controller
     public $View;
 
     /** @var string default_action The default action to perform when no action is given */
-    public $default_action = Config::get('DEFAULT_ACTION');
+    public $default_action;
 
     /**
      * Construct the (base) controller. This happens when a real controller is constructed, like in
@@ -33,5 +33,6 @@ class Controller
 
         // create a view object to be able to use it inside a controller, like $this->View->render();
         $this->View = new View();
+        $this->default_action = Config::get('DEFAULT_ACTION');
     }
 }
