@@ -4,3 +4,5 @@
 # don't commit all the dependencies fetched via Composer
 /vendor/
 /tests/coverage*
+/application/config/config.*.php
+!/application/config/config.development.php
