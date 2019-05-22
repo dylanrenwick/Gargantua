@@ -15,7 +15,7 @@ class View
      */
     public function render($filename, $data = null, $template = true)
     {
-        self::renderFiles(array($filename));
+        self::renderFiles(array($filename), $data, $template);
     }
 
     /**
@@ -33,8 +33,11 @@ class View
         }
 
         if ($template) {
-            foreach (Config::get('TEMPLATE_BEFORE') as $template_page) {
-                require Config::get('PATH_VIEW') . Config::get('PATH_TEMPLATE') . $template_page;
+            $before_templates = Config::get('TEMPLATE_BEFORE');
+            if ($before_templates) {
+                foreach ($before_templates as $template_page) {
+                    require Config::get('PATH_VIEW') . Config::get('PATH_TEMPLATE') . $template_page;
+                }
             }
         }
 
@@ -43,8 +46,11 @@ class View
         }
 
         if ($template) {
-            foreach (Config::get('TEMPLATE_AFTER') as $template_page) {
-                require Config::get('PATH_VIEW') . Config::get('PATH_TEMPLATE') . $template_page;
+            $after_templates = Config::get('TEMPLATE_AFTER');
+            if ($after_templates) {
+                foreach ($after_templates as $template_page) {
+                    require Config::get('PATH_VIEW') . Config::get('PATH_TEMPLATE') . $template_page;
+                }
             }
         }
     }
