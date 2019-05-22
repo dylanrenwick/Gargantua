@@ -35,8 +35,8 @@ class View
         if ($template) {
             $before_templates = Config::get('TEMPLATE_BEFORE');
             if ($before_templates) {
-                foreach ($before_templates as $template_page) {
-                    require Config::get('PATH_VIEW') . Config::get('PATH_TEMPLATE') . $template_page;
+                foreach ($before_templates as $filename) {
+                    require Config::get('PATH_VIEW') . Config::get('PATH_TEMPLATE') . $filename;
                 }
             }
         }
@@ -48,8 +48,8 @@ class View
         if ($template) {
             $after_templates = Config::get('TEMPLATE_AFTER');
             if ($after_templates) {
-                foreach ($after_templates as $template_page) {
-                    require Config::get('PATH_VIEW') . Config::get('PATH_TEMPLATE') . $template_page;
+                foreach ($after_templates as $filename) {
+                    require Config::get('PATH_VIEW') . Config::get('PATH_TEMPLATE') . $filename;
                 }
             }
         }
