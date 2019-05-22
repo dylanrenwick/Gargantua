@@ -28,7 +28,6 @@ class Text
             for ($i = 1; $i < count($matches); $i++) {
                 $val = 'null';
                 if (isset($data[$matches[$i]])) $val = $data[$matches[$i]];
-                echo $matches[$i]."\n";
                 $text = preg_replace('/{\$'.$matches[$i].'}/', $val, $text);
             }
         }
