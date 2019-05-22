@@ -4,7 +4,7 @@
 [![Code Climate](https://api.codeclimate.com/v1/badges/319025df22c1e7af05dd/maintainability)](https://codeclimate.com/github/dylanrenwick/Gargantua/maintainability)
 [![Travis CI](https://travis-ci.org/dylanrenwick/Gargantua.svg?branch=master)](https://travis-ci.org/dylanrenwick/Gargantua)
 
-Gargantua is a fork of the php-login project "HUGE".
+Gargantua is a fork of the php-login project [**HUGE**](https://github.com/panique/huge).
 
 As HUGE has reached soft end of life, this is a community continuation of the project.  
 Some new things to expect in Gargantua:
