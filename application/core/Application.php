@@ -37,6 +37,8 @@ class Application
             require Config::get('PATH_CONTROLLER') . $this->controller_name . '.php';
             $this->controller = new $this->controller_name();
 
+            if (strlen($this->action_name) === 0) $this->action_name = $this->controller->default_action;
+
             // check are controller and method existing and callable?
             if (is_callable(array($this->controller, $this->action_name))) {
                 if (!empty($this->parameters)) {
@@ -97,7 +99,7 @@ class Application
 
         // check for action: no action given ? then make action = default action (from config)
         if (!$this->action_name OR (strlen($this->action_name) == 0)) {
-            $this->action_name = Config::get('DEFAULT_ACTION');
+            $this->action_name = '';
         }
 
         // rename controller name to real controller class/file name ("index" to "IndexController")

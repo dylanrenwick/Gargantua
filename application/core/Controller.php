@@ -11,6 +11,9 @@ class Controller
     /** @var View View The view object */
     public $View;
 
+    /** @var string default_action The default action to perform when no action is given */
+    public $default_action = Config::get('DEFAULT_ACTION');
+
     /**
      * Construct the (base) controller. This happens when a real controller is constructed, like in
      * the constructor of IndexController when it says: parent::__construct();
